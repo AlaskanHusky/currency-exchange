@@ -1,6 +1,6 @@
 {
   "name": "currency-exchange",
-  "version": "0.1.0",
+  "version": "0.3.5",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
@@ -9,6 +9,7 @@
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
+    "moment": "^2.18.1",
     "mongodb": "^2.2.26",
     "mongoose": "^4.9.7",
     "pug": "^2.0.0-rc.1"
