@@ -1,5 +1,8 @@
 var mongoose = require("mongoose"); // connect Mongoose (MongoDB ODM library)
+var moment = require("moment");
 var Schema = mongoose.Schema; // create Mongoose Schema
+// set region
+moment.locale('ru');
 //
 mongoose.Promise = global.Promise;
 // atm scheme definition
@@ -29,10 +32,16 @@ var ATMScheme = new Schema({
       required: true,
     },
     time: {
-      type: Date,
+      type: String,
       required: true,
     }
   }
+});
+
+ATMScheme
+.virtual('currencies_rate_time_formatted')
+.get(function () {
+  return moment(this.er.time, 'HH:mm DD.MM.YYYY');
 });
 
 module.exports = mongoose.model('ATM', ATMScheme); // export model
