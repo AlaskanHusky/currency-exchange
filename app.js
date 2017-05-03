@@ -6,7 +6,8 @@ var bodyParser = require("body-parser"); // connect library for request parse
 var path = require('path');
 var atm_controller = require('./controllers/atmController');
 // import routes
-var index = require('./routes/index.js');
+var index = require('./routes/index');
+var currencies = require('./routes/currencies');
 // create application object
 var app = express();
 // path to db on local computer
@@ -25,6 +26,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index); // define route handler for "/"
+app.use('/currencies', currencies); // define route handler for "/currencies"
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
