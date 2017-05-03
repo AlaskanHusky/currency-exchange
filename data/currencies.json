@@ -1,0 +1,12 @@
+{
+  "shortName" : "USD",
+  "fullName" : "United States Dollar"
+},
+{
+  "shortName" : "EUR",
+  "fullName" : "Euro"
+},
+{
+  "shortName" : "RUB",
+  "fullName" : "Russian ruble"
+}
