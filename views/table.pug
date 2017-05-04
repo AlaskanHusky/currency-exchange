@@ -12,23 +12,8 @@ block content
     each atm in listOfValues
       tr
         td #{atm.bank}
-        td #{atm.address}
-        td #{atm.er.values_list}
-        td #{atm.er.values_list}
-        td #{atm.er.values_list}
-        td #{atm.currencies_rate_time_formatted}
-      tr
-        td Josephin Tan
-        td $150
-        td $10
-        td Annie
-      tr
-        td Joyce Ming
-        td $200
-        td $35
-        td Andy
-      tr
-        td James A. Pentel
-        td $175
-        td $25
-        td Annie
+        td #{atm.atm_info.address}
+        td #{atm.exchange_rates.currency_name}
+        td #{atm.exchange_rates.purchase_value}
+        td #{atm.exchange_rates.sale_value}
+        td #{atm.exchange_rates.date}
