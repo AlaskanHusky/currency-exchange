@@ -1,17 +1,9 @@
 var ATM = require('../models/atm');
-var async = require('async');
 
-// Display list of all Authors
-exports.value_list = function(req, res, next) {
-
-  ATM.find({})
-  .exec(function(err, result) {
-      if (err) {
-        return next(err);
-      }
-      res.render('table', {
-        title: 'Currency Exchange',
-        listOfValues: result
-      });
-    });
-};
+const atmFields = "bank atm_info exchange_rates";
+// Display ATM info
+exports.getByATM = (atm) => {
+  return ATM.find({
+    'atm_info.id': atm
+  }).select(atmFields);
+}
