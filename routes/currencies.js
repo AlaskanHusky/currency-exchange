@@ -5,7 +5,7 @@ var currency_controller = require('../controllers/currencyController');
 // List of currencies routes
 router.get('/', function(req, res) {
   currency_controller.getAllCurrencies().then(data => {
-    res.send(data);
+    res.json(data);
   })
 });
 

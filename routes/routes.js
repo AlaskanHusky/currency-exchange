@@ -11,10 +11,8 @@ router.use('/currencies', currencies); // define route handler for "/currencies"
 router.use('/banks', banks); // define route handler for "/banks"
 router.use('/atm', atms); // define route handler for "/banks"
 // catch 404 and forward to error handler
-router.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+router.get('*', (req, res) => {
+  res.send('<h1>404 - Not Found</h1>');
 });
 
 module.exports = router;
