@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 
 class Currencies extends Component {
     render() {
-
+      /*let lines = [];
+      for (var i = 0; i < 5; i++) {
+        lines.push(<tr>);
+        for (var j = 0; j < 5; j++) {
+          lines.push(<td>i</td>);
+        }
+        lines.push(</tr>);
+      }*/
       return (
       <table>
         <tr>
@@ -13,13 +20,7 @@ class Currencies extends Component {
           <th>Sale rate</th>
           <th>Time</th>
         </tr>
-        for (let i = 0; i < 5; i++) {
-          <tr>
-          for (let j = 0; j < 5 ; j++) {
-            <td>{i}</td>
-          }
-          </tr>
-        }
+        // {lines}
       </table>
       );
     }

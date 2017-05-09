@@ -4,7 +4,7 @@ var router = express.Router();
 const atm_controller = require('../controllers/atmController');
 // ATM's info
 router.get('/:atm', function(req, res) {
-  atm_controller.getByATM(req.params.atm).then(data => {
+  atm_controller.getATMById(req.params.atm).then(data => {
     res.json(data);
   })
 });

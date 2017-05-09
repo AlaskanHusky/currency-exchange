@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 
 class ATM extends Component {
+  
     render() {
 
       return (
       <h2>ATM</h2>
-      <span>Bank<span>
-      <span>Address<span>
+      <span>Bank</span>
+      <span>Address</span>
       <table>
         <tr>
           <th>Currency</th>
