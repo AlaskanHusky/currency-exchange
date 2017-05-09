@@ -5,7 +5,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'] // расширения для загрузки модулей
+    extensions: ['*', '.js', '.jsx'] // extensions for modules loading
   },
   module: {
     loaders: [{

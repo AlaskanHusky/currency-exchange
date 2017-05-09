@@ -1,6 +1,6 @@
 {
   "name": "currency-exchange",
-  "version": "0.6.3",
+  "version": "0.6.7",
   "private": true,
   "main": "app.js",
   "author": "Pavel Yanushevsky",
@@ -23,7 +23,7 @@
     "babel-preset-react": "^6.24.1"
   },
   "scripts": {
-    "webpack": "./node_modules/.bin/webpack",
+    "webpack": "./node_modules/.bin/webpack --watch --color",
     "start": "node ./server/bin/www",
     "devstart": "nodemon ./server/bin/www"
   }

@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 
 class Currencies extends Component {
-    render() {
-      /*let lines = [];
-      for (var i = 0; i < 5; i++) {
-        lines.push(<tr>);
-        for (var j = 0; j < 5; j++) {
-          lines.push(<td>i</td>);
-        }
-        lines.push(</tr>);
-      }*/
-      return (
+  const data;
+  fetch('/currencies').then(function(res) {
+    data = res.json();
+  })
+  constructor() {
+    super();
+    this.state = {
+      array: data
+    };
+  }
+
+  render() {
+    return (
       <table>
         <tr>
           <th>Bank</th>
@@ -20,10 +23,19 @@ class Currencies extends Component {
           <th>Sale rate</th>
           <th>Time</th>
         </tr>
-        // {lines}
+        for (var i = 0; i < {this.state.array.length}; i++) {
+          <tr>
+            <td>{this.state.array.bank}</td>
+            <td>{this.state.array.atm_info.address}</td>
+            <td>{this.state.array.exchange_rates.currency_name}</td>
+            <td>{this.state.array.exchange_rates.purchase_value}</td>
+            <td>{this.state.array.exchange_rates.sale_value}</td>
+            <td>{this.state.array.exchange_rates.date}</td>
+          </tr>
+        }
       </table>
-      );
-    }
+    );
+  }
 }
 
 export default Currencies;
