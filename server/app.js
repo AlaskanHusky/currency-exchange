@@ -15,22 +15,9 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 // connect routes
 app.use('/', routes);
-//
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
-});
-app.get('/currencies', function(req, res) {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
-});
-app.get('/banks', function(req, res) {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
-});
-app.get('/atm', function(req, res) {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
-});
 // connect to MongoDB Server
 mongoose.connect(dburl);
 // create database connection

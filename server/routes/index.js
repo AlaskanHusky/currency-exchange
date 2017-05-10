@@ -1,8 +1,9 @@
 var express = require('express');
+var path = require('path');
 var router = express.Router();
 // require controller modules
-router.get('/', function(req, res, next) {
-  res.redirect('/currencies');
+router.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, '../../public/index.html'));
 });
 
 module.exports = router;

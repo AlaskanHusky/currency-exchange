@@ -1,7 +1,7 @@
 module.exports = {
-  entry: './public/javascripts/app.js', // entry point
+  entry: './public/javascripts/index.js', // entry point
   output: {
-    path: __dirname + './public/javascripts/static/', // output files
+    path: __dirname + '/public/javascripts/static/', // output files
     filename: 'bundle.js'
   },
   resolve: {

@@ -23,7 +23,7 @@
     "babel-preset-react": "^6.24.1"
   },
   "scripts": {
-    "webpack": "./node_modules/.bin/webpack --watch --color",
+    "webpack": "./node_modules/.bin/webpack --watch --progress --color",
     "start": "node ./server/bin/www",
     "devstart": "nodemon ./server/bin/www"
   }
