@@ -29,47 +29,33 @@ tr:hover td {
 }
 
 .list {
-  counter-reset: li;
+  margin-left: 0;
   list-style: none;
-  font: 14px "Trebuchet MS", "Lucida Sans";
-  padding: 0;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+  counter-reset: li;
 }
 
-.list a {
+.list li {
   position: relative;
-  display: block;
-  padding: .4em .4em .4em 2em;
-  margin: .5em 0;
-  background: #DAD2CA;
-  color: #444;
-  text-decoration: none;
-  border-radius: .3em;
-  transition: .3s ease-out;
+  margin-bottom: 1.5em;
+  width: 150px;
+  border: 3px solid #CADFCF;
+  padding: 0.6em;
+  border-radius: 4px;
+  background: #FEFEFE;
+  color: #231F20;
+  font-family: "Trebuchet MS", "Lucida Sans";
 }
 
-.list a:hover {
-  background: #E9E4E0;
-}
-
-.list a:hover:before {
-  transform: rotate(360deg);
-}
-
-.list a:before {
-  content: counter(li);
-  counter-increment: li;
+.list li:before {
   position: absolute;
-  left: -1.3em;
-  top: 50%;
-  margin-top: -1.3em;
-  background: #8FD4C1;
-  height: 2em;
-  width: 2em;
-  line-height: 2em;
-  border: .3em solid white;
-  text-align: center;
+  top: -0.7em;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  font-size: 16px;
   font-weight: bold;
-  border-radius: 2em;
-  transition: all .3s ease-out;
+  color: #DCC24B;
+  background: #FEFEFE;
+  border-radius: 50%;
+  counter-increment: li;
+  content: counter(li);
 }

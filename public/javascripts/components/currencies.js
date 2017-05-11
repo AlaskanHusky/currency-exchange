@@ -6,7 +6,6 @@ import Menu from './menu';
 class Currencies extends Component {
     constructor() {
       super();
-      this.render = this.render.bind(this);
       this.state = {
           currencies: []
       }
@@ -18,7 +17,7 @@ class Currencies extends Component {
       xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
                vm.setState({
-                   currencies: JSON.parse(xmlHttp.responseText).currencies
+                   currencies: JSON.parse(xmlHttp.responseText)
                });
            }
        };
@@ -30,10 +29,10 @@ class Currencies extends Component {
      return _.map(this.state.currencies, function (currency) {
        return <Currency bank={currency.bank}
                 address={currency.atm_info.address}
-                currency={currency.exchange_rates.currency}
+                currency={currency.exchange_rates.currency_name}
                 prate={currency.exchange_rates.purchase_value}
                 srate={currency.exchange_rates.sale_value}
-                time={currency.exchange_rates.time}
+                time={currency.exchange_rates.date}
               />;
     });
   }
