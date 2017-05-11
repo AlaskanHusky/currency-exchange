@@ -3,7 +3,7 @@ import Currencies from './currencies';
 
 class App extends Component {
   render() {
-    const pcurrencies = [];
+    const currencies = [];
     return (
         <Currencies currencies={currencies}/>
     );
