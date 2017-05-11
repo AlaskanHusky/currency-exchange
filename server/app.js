@@ -21,9 +21,9 @@ app.use(bodyParser.urlencoded({
 app.use(express.static(path.join(__dirname, '../public')));
 // connect routes
 app.use('/', index);
-app.use('/currencies', currencies);
-app.use('/banks', banks);
-app.use('/atm', atms);
+app.use('/api/currencies', currencies);
+app.use('/api/banks', banks);
+app.use('/api/atm', atms);
 // connect to MongoDB Server
 mongoose.connect(dburl);
 // create database connection

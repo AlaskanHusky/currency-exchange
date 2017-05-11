@@ -4,11 +4,14 @@ class App extends Component {
   render() {
     return (
       <nav>
-        <ul class="nav-menu">
-          <li class="nav-item">
+        <ul className="nav-menu">
+          <li className="nav-item">
             <a href="/">Home</a>
           </li>
-          <li class="nav-item">
+          <li className="nav-item">
+            <a href="/currencies">Currencies</a>
+          </li>
+          <li className="nav-item">
             <a href="/banks">Banks</a>
           </li>
         </ul>
@@ -16,4 +19,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;
