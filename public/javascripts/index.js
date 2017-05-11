@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app';
-import { Router, Route } from 'react-router';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-var browserHistory = ReactRouter.browserHistory;
+import Menu from './components/menu';
+import Currencies from './components/currencies';
 
 ReactDOM.render(
-  <Router history={browserHistory}>
-    <Route path="/" component={App} />
+  <Router>
+    <div>
+      <Route exact path="/" component={Menu} />
+      <Route path="/currencies" component={Currencies} />
+      <Route path="/banks" component={Menu} />
+    </div>
   </Router>,
   document.getElementById("root")
 )
