@@ -1,18 +1,22 @@
 var express = require('express');
 var router = express.Router();
 // require controller modules
-const bank_controller = require('../controllers/bankController');
+var ATM = require('../models/atm');
 // List of banks
 router.get('/', function(req, res) {
-  bank_controller.getAllBanks().then(data => {
-    res.json(data);
-  })
+  ATM.find({}, (err, result) => {
+      res.json(result);
+  });
 });
 
-router.get('/:bank', function(req, res) {
-  bank_controller.getBankInfo(req.params.bank).then(data => {
-    res.json(data);
-  })
+router.get('/:id', function(req, res) {
+  const query = {'_id' : req.params.id};
+
+  ATM.find(query, (error, result) => {
+        error && res.json({ error });
+        !result && res.json({ error: 'Bank not found' });
+        res.json(result);
+    });
 });
 
 module.exports = router;

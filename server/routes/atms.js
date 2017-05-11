@@ -1,12 +1,16 @@
 var express = require('express');
 var router = express.Router();
 // require controller modules
-const atm_controller = require('../controllers/atmController');
+var ATM = require('../models/atm');
 // ATM's info
-router.get('/:atm', function(req, res) {
-  atm_controller.getATMById(req.params.atm).then(data => {
-    res.json(data);
-  })
+router.get('/:id', function(req, res) {
+  const query = {'atm_info.id' : req.params.id};
+
+  ATM.find(query, (error, result) => {
+        error && res.json({ error });
+        !result && res.json({ error: 'ATM not found' });
+        res.json(result);
+    });
 });
 
 module.exports = router;

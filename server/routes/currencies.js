@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
-// require controller modules
-var currency_controller = require('../controllers/currencyController');
+// require models
+var ATM = require('../models/atm');
 // List of currencies routes
 router.get('/', function(req, res) {
-  currency_controller.getAllCurrencies().then(data => {
-    res.json(data);
-  })
+  ATM.find({}, (err, result) => {
+      res.json(result);
+  });
 });
 
 module.exports = router;
