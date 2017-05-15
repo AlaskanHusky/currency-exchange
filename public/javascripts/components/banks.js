@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
 import Menu from './menu';
 
 class Banks extends Component {
@@ -22,10 +21,10 @@ class Banks extends Component {
        };
        xmlHttp.open("GET", `/api/banks/`, true); // true for asynchronous
        xmlHttp.send(null);
-   }
+    }
 
    renderItems() {
-     return _.map(this.state.banks, function (bank) {
+     return this.state.banks.map(function (bank) {
        return <li>{bank.bank}</li>;
     });
   }
